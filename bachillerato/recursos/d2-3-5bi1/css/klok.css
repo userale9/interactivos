@@ -1,0 +1,568 @@
+/* ========================
+Klok -> [Alejandro Pacheco],
+Version = 1.0,
+Creado: 21/10/14,
+Ultima modificacion: 21/10/14
+======================== */
+
+/* [Reset: 1.1] -> ========================= KLOK ===================================== <- */
+* {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+    background:transparent;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; }
+
+body, html{
+    height:100%; }
+
+article, aside, details, figcaption, 
+figure, footer, header, hgroup, main, 
+nav, section, summary {
+    display: block; }
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto; }
+
+input[type="search"] {
+    -webkit-appearance: textfield; }
+
+audio:not([controls]) {
+    display: none;
+    height: 0; }
+
+ol, ul {
+    list-style: none; }
+
+blockquote, q {
+    quotes: none; }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+
+button {
+    overflow: visible;
+    cursor: pointer; }
+
+button, select {
+    text-transform: none; }
+
+img, textarea, iframe {
+    max-width: 100%; }
+
+a{ 
+    color: white;
+    cursor:pointer; 
+    text-decoration:none; } 
+a:hover, a:active { }
+
+
+/* [Fonts] 
+=============================================================*/	
+@font-face {
+    font-family: "helveticaneue";
+    src: url('../fonts/helveticaneue.ttf') format('truetype'); }
+
+/* Typography
+=============================================================*/
+h1{
+    height: 74px !important; }
+h2{}
+h3{}
+h4{}
+h5{}
+h6{}
+
+/* Layout [css]
+=============================================================*/
+#contenido-interactivo {
+    font-family: "helveticaneue", Arial, sans-serif; }
+
+#activity {
+    z-index: 2000 !important;
+    background: url(../img/fondo.png) no-repeat center !important; }
+
+#pantalla2 {
+    display: none;
+    position: relative; }
+
+#panelReel, #contenido-interactivo, #pantalla1, #pantalla2, #bottom-pantalla2, #pantalla4{
+    z-index: 3000 !important; }
+
+#pantalla3{
+    z-index: 3500 !important; }
+
+/* Global class
+=============================================================*/
+.display-none { 
+    display:none !important; }
+
+.display-block {
+    display: block !important; }
+
+.text-center { 
+    text-align:center; }
+
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%; }
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle; }
+
+.vertical-align-middle {
+    vertical-align: middle;
+    display: inline-block; }
+
+.vertical-align-top {
+    vertical-align: top;
+    display: inline-block; }
+
+.vertical-align-bottom {
+    vertical-align: bottom;
+    display: inline-block; }
+
+.transition, a, button{
+    transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s; }
+
+.cfix{ *zoom: 1; }
+.cfix:before, .cfix:after{
+    display:table;
+    content: ""; }
+.cfix:after{
+    clear: both; }
+
+/* Interactivo -> [pantalla 1]
+=============================================================*/
+#contenido-interactivo {
+    position: relative; }
+
+#pantalla1 {
+    position: relative;
+    overflow: hidden;
+    margin: 0px auto;
+    width: 667px;
+    background: url('../img/background.1.png') no-repeat scroll center center transparent;
+    height: 100%;
+    padding-top: 73px; }
+
+#contenido-pantalla1 {
+    width: 100%;
+    z-index: 999999;
+    overflow: hidden;
+    position: relative;
+    padding: 0px 62px 0px 25px;
+    height: 390px; }
+
+#contenido-pantalla1 article {
+    color: white;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-shadow: 1px 1px 1px #444; }
+
+.img-left {
+    float: left;
+    margin-right: 20px; }
+
+.img-right {
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;}
+
+#buttonNextp1 {
+    width: 23px;
+    height: 40px;
+    display:block;
+    opacity: .6;
+    background:url(../img/siguiente.png) no-repeat center;
+    float: right; }
+
+#buttonNextp1:hover, #buttonNextp1:active {
+    opacity: 1; }
+
+#button-next {
+    margin-bottom: 20px; }
+
+#contenido-pantalla1 .scroll-bar.vertical {
+    position: absolute;
+    right: 26px !important;
+    z-index: 9999999;
+    width: 10px;
+    opacity: 1;
+    background:#16191E; }
+
+#contenido-pantalla1 .thumb {
+    position: absolute;
+    width: 10px;
+    min-height: 10px;
+    cursor: pointer;
+    background-color: #6c6c6c;
+    border: 1px solid #515151;
+    overflow: visible; }
+
+/* Interactivo -> [pantalla 2]
+=============================================================*/
+#pantalla2 {
+    background: url('../img/area-de-reactivos.png') no-repeat scroll center center transparent;
+    height: 100%;
+    overflow: hidden;
+    width: 100%; }
+
+#top-pantalla2 {
+    position: relative;
+    height: 72px;
+    width: 515px;
+    overflow: hidden;
+    margin: 152px auto 0px; }
+
+#contenido-top-pantalla2 {
+    width: 100%;
+    height: 100%; }
+
+#bottom-pantalla2 {
+    width: 100%;
+    height: 225px;
+    background: url('../img/RoundedRectangle1.png') repeat scroll 0% 0% transparent;
+    padding: 15px 210px; }
+
+#question-pantalla2 {
+    color: #603913;
+    text-shadow: 1px 1px 0px #F5F5F5;
+    width: 280px;
+    font-size: 13px;
+    line-height: 20px;
+    height: 72px;
+    overflow: hidden; }
+
+#question-form {
+    margin-top: 20px; }
+
+#question-form textarea {
+    background:#FFF;
+    width: 100%;
+    color: #555;
+    resize: none;
+    font-size: 14px;
+    height: 63px;
+    outline: 1px solid #D4D4D4;
+    border-top: 3px solid #F6F9F5;
+    padding: 5px 10px;
+    font-style: italic;
+    font-family: "helveticaneue",Arial,sans-serif; }
+
+#question-form textarea:focus {
+    box-shadow: 0px 0px 3px #CCC;
+    -webkit-box-shadow: 0px 0px 3px #CCC;
+    -moz-box-shadow: 0px 0px 3px #CCC; }
+
+#comprobar-button {
+    background:#0076A3;
+    color: #FFF;
+    font-size: 16px;
+    text-shadow: 1px 1px 0px #004F85;
+    float: right;
+    padding: 2.5px 7px;
+    margin-top: 15px; }
+
+#comprobar-button:hover, #comprobar-button:active {
+    color: #0076a3;
+    text-shadow:none;
+    background: white; }
+
+#contenido-top-pantalla2 p {
+    height: 100%;
+    float: left;
+    padding: 7px 70px 0px;
+    color: #FFF;
+    font-size: 14px;
+    width: 64%; }
+
+#button-tablaShow {
+    float: right;
+    margin: 17px 70px 0px 0px; }
+
+#callback-pregunta {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    text-align: center;
+    left: 0;
+    background: rgba(0,0,0,0.7); }
+
+#success-pregunta, #error-pregunta {
+    display: none; }
+
+#success-pregunta {
+    background: url(../img/retroalimentacion-afirmativa.png) no-repeat center;
+    width: 243px;
+    margin: 0 auto;
+    height: 55px; }
+
+#success-pregunta p {
+    color: #415329;
+    line-height: 55px; }
+
+#error-pregunta {
+    background: url(../img/retroalimentacion-incorrecta.png) no-repeat center;
+    width: 243px;
+    margin: 0 auto;
+    height: 55px; }
+
+#success-pregunta p {
+    color: #415329;
+    font-size: 14px;
+    line-height: 55px; }
+
+#error-pregunta p {
+    color: #632E2E;
+    line-height: 20px;
+    font-size: 14px;
+    padding-top: 6px; 
+    text-shadow: 1px 1px 0px rgba(245,   245,   245, 0.4)}
+
+#contenido-callback-pregunta {
+    display: inline-block; }
+
+#closeImgCerrar-callback-pregunta {
+    position: absolute;
+    right: 260px;
+    top: 240px; }
+
+/* Interactivo -> [pantalla 3]
+=============================================================*/
+#pantalla3 {
+    width: 696px;
+    height: 473px;
+    position: absolute;
+    top: 50%;
+    overflow: hidden;
+    left: 50%;
+    opacity: 0;
+    margin: -236.5px 0 0 -348px;
+    transform: scale(0);
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0); }
+
+#left-top-pantalla3 {
+    color: #02ee87;
+    float: left; }
+
+#left-top-pantalla3 span {
+    margin-left: 5px; }
+
+#right-top-pantalla3 {
+    float: right; }
+
+#top-pantalla3 {
+    padding: 10px;
+    background: #232323; /* Old browsers */
+    background: -moz-linear-gradient(top, #232323 0%, #020202 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#232323), color-stop(100%,#020202)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #232323 0%,#020202 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #232323 0%,#020202 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #232323 0%,#020202 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #232323 0%,#020202 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#232323', endColorstr='#020202',GradientType=0 );
+    border-top:1px solid #626262;
+    border-left:1px solid #626262;
+    border-right:1px solid #626262;
+    border-bottom:1px solid #222222;
+    border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0; }
+
+#contanido-pantalla3 {
+    width: 100%; 
+    overflow: hidden;
+    position: relative;
+    border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px; 
+    border-bottom: 1px solid #3f464c;
+    height: 421px; }
+
+#table-pantalla3 {
+    border: 1px solid #000;
+    width: 100%;
+    height: 377px;
+    color: #FFF;
+    overflow: hidden;
+    position: relative;
+    background:url(../img/base.png) repeat; }
+
+#table-pantalla3 li {
+    width: 100%;
+    border-bottom: 1px solid #433D43;
+    border-top:1px solid #0d0d0e;
+    font-size: 0px; }
+
+.baseCell {
+    background: url(../img/cellBase.png) repeat !important; }
+
+#table-pantalla3 li p{
+    width: 16%;
+    height: 85px;
+    font-style: italic;
+    border-left: 1px solid #0D0D0E;
+    border-right: 1px solid #433D43;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 60px;
+    padding: 10px; }
+
+.table-pantalla3-title p {
+    font-style: normal !important; }
+
+.w20 {
+    width: 20% !important; }
+
+.w10 {
+    width: 11% !important; }
+
+.w15 {
+    width: 15% !important; }
+
+#contanido-pantalla3 .scroll-bar.vertical {
+    position: absolute;
+    right: 0 !important;
+    width: 2%;
+    z-index: 1;
+    opacity: 1;
+    background:#16191E;}
+
+#contanido-pantalla3 .thumb {
+    position: absolute;
+    width:100%;
+    cursor: pointer;
+    background-color: #6c6c6c;
+    border: 1px solid #515151;
+    overflow: visible; }
+
+#button-table-pantalla3 {
+    color: white;
+    font-style: italic;
+    background:url(../img/base.png) repeat;
+    border: 1px solid #433D43;
+    padding: 10px; }
+
+.lh1 {
+    line-height: 20px !important; 
+    padding-top: 20px !important; }
+
+.lh2 {
+    line-height: 20px !important;
+    padding-top: 10px !important; }
+
+.lh3 {
+    line-height: 20px !important;
+    padding-top: 3px !important; }
+
+.virusImg {
+    float: right;
+    margin-top: 15px;
+    width: 35px;
+    height: 32px;
+    background-image: url(../img/formasVirus.png);
+    background-repeat: no-repeat; }
+
+.v01{
+    background-position: -7px 0px; }
+.v02{
+    background-position: -7px -42px; }
+.v03{
+    background-position: -7px -79px; }
+.v04{
+    background-position: -7px -121px; }
+.v05{
+    background-position: -7px -159px; }
+.v06{
+    background-position: -7px -201px; }
+.v07{
+    background-position: -7px -240px; }
+.v08{
+    background-position: -7px -281px; }
+.v09{
+    background-position: -7px -319px; }
+.v10{
+    background-position: -7px -358px; }
+.v11{
+    background-position: -7px -392px; }
+
+#detalleVirus {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%; }
+
+#contenidoVirusDetalle {
+    display: inline-block;
+    position: relative; }
+
+#closeImgCerrar {
+    position: absolute;
+    right: 0;
+    top: 0; }
+
+/* Interactivo -> [pantalla 4]
+=============================================================*/
+#pantalla4 {
+    display: block;
+    position: relative;
+    width: 510px;
+    margin: 0px auto;
+    overflow: visible;
+    height: 445px; }
+
+#contenido-pantalla4 {
+    width: 100%;
+    position: relative;
+    height: 415px;
+    background: url('../img/retroalimentacion-final.png') no-repeat scroll top transparent; } 
+
+#contenido-pantalla4 article {
+    position: absolute;
+    bottom: -15px;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 0px #111; }
+
+#closeImgCerrarp4 {
+    position: absolute;
+    top: 32px;
+    right: -96px; }
+
+
+
+
+

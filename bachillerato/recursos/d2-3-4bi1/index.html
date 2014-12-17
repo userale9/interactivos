@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta charset="utf-8" />
+        <title></title>
+        <link rel="stylesheet" href="../../common/css/interfaz.css" type="text/css" />
+        <link rel="stylesheet" href="css/activity.css"  type="text/css" />
+        <link rel="stylesheet" href="css/klok.css"  type="text/css" />
+        <script src="../../common/js/jquery-1.8.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="config.js"></script>
+        <script type="text/javascript" src="../../common/js/jquery.touchSwipe.min.js"></script>
+        <script type="text/javascript" src="../../common/js/interfaz.js"></script>
+        <script type="text/javascript" src="../../common/js/multipanel.js"></script>
+        <script type="text/javascript" src="js/generales.js"></script>
+        <script type="text/javascript" src="js/klok.js"></script>	
+    </head>
+    <body>
+        <div id="activity">
+            <div id="fondomovil"></div>
+            <div id="panelReel">
+
+                <!-- Interactivo -->
+                <section id="contenido-interactivo">
+
+                    <section id="pantalla1"><!-- Pantalla 1 -->
+                        <div class="table">
+                            <div class="table-cell">
+                                <div id="contenido-pantalla1"><!-- Contenido pantalla 1 -->
+                                    <div id="left-pantalla1">
+                                        <div class="table">
+                                            <div class="table-cell">
+                                                <article>Sorprendentemente, la diversidad biológica que se ha encontrado en fondos marinos alrededor de fuentes hidrotermales no depende de la luz solar y, por tanto, tampoco del proceso conocido como fotosíntesis.</article>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="right-pantalla1">
+                                        <a id="playVideo" href="#">REPRODUCIR VIDEO</a>
+                                    </div>
+                                    <a id="goTopantalla3" href="#">
+                                        <img src="img/siguiente.png" alt="" title="" />
+                                    </a>
+                                </div><!-- Fin contenido pantalla 1 -->
+                            </div>
+                        </div>
+                    </section><!-- Fin pantalla 1 -->
+
+                    <section id="pantalla2"><!-- Pantalla 2 -->
+                        <div class="table">
+                            <div class="table-cell">
+                                <div id="contenido-pantalla2"><!-- Contenido pantalla 2 -->
+                                    <video id="otk-video" controls preload="auto" poster="http://oceantoday.noaa.gov/endoceansharks/otkn_608a_endocean_sharks_web_1280.jpg" data-setup="">
+
+                                        <source src="http://oceantoday.noaa.gov/endoceansharks/otkn_608a_endocean_sharks_lg.mp4" type='video/mp4' data-res="720p"/>
+                                        <source src="http://oceantoday.noaa.gov/endoceansharks/otkn_608a_endocean_sharks_sm.mp4" type='video/mp4' data-res="360p" data-default="true"/>
+                                        <source src="http://oceantoday.noaa.gov/endoceansharks/otkn_608a_endocean_sharks_lg.webm" type='video/webm' data-res="720p" />
+                                        <source src="http://oceantoday.noaa.gov/endoceansharks/otkn_608a_endocean_sharks_sm.webm" type='video/webm' data-res="360p" />
+                                    </video>
+                                    <div id="bottom-pantalla2">
+                                        <article>Video tomado de http://oceantoday.noaa.gov/lifeonavent/welcome.html el día 10 de septiembre de 2014. El sitio web pertenece a Natiional Ocean Service, NOAA, Department of Commerce y al gobierno de los Estados Unidos de América</article>
+                                        <a id="returnWindow" href="#">
+                                            <img src="img/regresar.png" alt="" title="" />
+                                        </a>
+                                    </div>
+                                </div><!-- Fin contenido pantalla 2 -->
+                            </div>
+                        </div>
+                    </section><!-- Fin pantalla 2 -->
+
+                    <section id="pantalla3"><!-- Pantalla 3 -->
+                        <div class="table">
+                            <div class="table-cell">
+                                <div id="contenido-pantalla3"><!-- Contenido pantalla 3 -->
+
+                                    <article id="article-pantalla3">El gusano de tubo gigante (Riftia pachyptila) es una de las formas de vida que prospera alrededor de las chimeneas hidrotermales.  Este ser vivo posee un órgano especial que alberga millones de bacterias simbióticas que le ayudan a sintetizar su alimento.</article>
+
+                                    <div id="cajas-pantalla3">
+                                        <span id="droppable1" class="droppable" data-correcto="1"></span>
+                                        <span id="droppable2" class="droppable" data-correcto="2"></span>
+                                        <span id="droppable3" class="droppable" data-correcto="3"></span>
+                                        <span id="droppable4" class="droppable" data-correcto="4"></span>
+                                        <span id="droppable5" class="droppable" data-correcto="5"></span>
+                                    </div>
+
+                                    <div id="respuestas-pantalla3" class="text-center"><!-- Respuestas -->
+                                        <div id="bottom-respuestas-pantalla3">
+                                            <div class="respuesta transition">
+                                                <div class="draggable" data-correcto="1">
+                                                    <p>La energía liberada es usada para sintetizar moléculas orgánicas, utilizando CO2 como fuente de carbono.</p>
+                                                </div>
+                                            </div>
+                                            <div class="respuesta transition">
+                                                <div class="draggable" data-correcto="2">
+                                                    <p>Las bacterias alojadas en el anélido, oxidan el ácido sulfhídrico y 
+                                                        producen azufre o compuestos azufrados, agua y energía.</p>
+                                                </div>
+                                            </div>
+                                            <div class="respuesta transition">
+                                                <div class="draggable" data-correcto="3">
+                                                    <p>Ambos compuestos son transportados mediante moléculas de 
+                                                        hemoglobina altamente especializadas hasta un órgano llamado trofosoma</p>
+                                                </div>
+                                            </div>
+                                            <div class="respuesta transition">
+                                                <div class="draggable" data-correcto="4">
+                                                    <p>El gusano absorbe el oxígeno y el acido sulfhídrico del agua circundante mediante una estructura llamada pluma.</p>
+                                                </div>
+                                            </div>
+                                            <div class="respuesta transition">
+                                                <div class="draggable" data-correcto="5">
+                                                    <p>El agua fría, con oxígeno disuelto, se mezcla con el ácido sulfhídrico expulsado por la fuente hidrotermal.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- Fin respuestas -->
+
+                                </div><!-- Fin contenido pantalla 3 -->
+                            </div>
+                        </div>
+                    </section><!-- Fin pantalla 3 -->
+
+                    <section id="pantalla4"><!-- Pantalla 4 -->
+                        <div class="table">
+                            <div class="table-cell">
+                                <div id="contenido-pantalla4"><!-- Contenido pantalla 4 -->
+                                    <div id="left-pantalla4">
+                                        <a id="close-left-pantalla4" href="#">
+                                            <img src="img/cerrar2.png" alt="" title="" />
+                                        </a>
+                                        <div class="table">
+                                            <div class="table-cell">
+                                                <img id="correcto-pantalla4" src="img/correcto.png" alt="" title="" />
+                                                <img id="incorrecto-pantalla4" src="img/incorrecto.png" alt="" title="" />
+                                                <div id="overlay-left-pantalla4"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="right-pantalla4">
+                                        <div id="top-right-pantalla4">
+                                            <div class="table">
+                                                <div class="table-cell">
+                                                    <p id="question"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="bottom-right-pantalla4">
+                                            <div class="table">
+                                                <div class="table-cell">
+                                                    <div id="contenido-question-pantalla4" class="text-center">
+                                                        <input id="check1" type="checkbox" name="check" value="check1">  
+                                                        <label for="check1"></label>
+                                                        <input id="check2" type="checkbox" name="check" value="check2">  
+                                                        <label for="check2"></label>
+                                                        <input id="check3" type="checkbox" name="check" value="check3">  
+                                                        <label for="check3"></label>
+                                                        <input id="check4" type="checkbox" name="check" value="check4">  
+                                                        <label for="check4"></label>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div><!-- Fin contenido pantalla 4 -->
+                            </div>
+                        </div>
+                    </section><!-- Fin pantalla 4 -->
+
+                    <section id="realimentacion">
+                        <div class="table">
+                            <div class="table-cell">
+
+                                <div id="contenidoRea1"><!-- Realimentacion 1 -->
+                                    <a id="closeContenidoRea1" href="#">
+                                        <img src="img/cerrar.png" alt="" title="" />
+                                    </a>
+                                    <div class="table">
+                                        <div class="table-cell">
+                                            <article class="text-center">¡Excelente! El proceso mediante el cual organismos autótrofos, como las bacterias alojadas el gusano de tubo grande, sintetizan moléculas orgánicas a partir de compuestos inorgánicos y sin necesidad de la luz solar se conoce como quimiosíntesis.<p>Ahora responde la siguiente actividad.</p></article>
+                                        </div>
+                                    </div>
+                                </div><!-- Fin realimentacion 1 -->
+                                
+                                <div id="contenidoRea2"><!-- Realimentacion 2 -->
+                                    <a id="closeContenidoRea2" href="#">
+                                        <img src="img/cerrar.png" alt="" title="" />
+                                    </a>
+                                    <div class="table">
+                                        <div class="table-cell">
+                                            <article class="text-center">¡Muy bien! ¿Sorpredido por la diversidad de formas en las que los seres vivos obtenemos los materiales y  la energía? <p>Has concluido la actividad.</p></article>
+                                        </div>
+                                    </div>
+                                </div><!-- Fin realimentacion 2 -->
+
+                            </div>
+                        </div>
+                    </section>
+
+                </section><!-- Fin interactivo -->
+
+            </div> <!-- fin panelReel -->      
+        </div><!-- fin activity -->
+
+        <audio src="error.mp3" id="sonido-error" style="display:none;"></audio>
+        <audio src="success.wav" id="sonido-success" style="display:none;"></audio>
+
+        <script type="text/javascript" src="js/plugins/jquery-ui-1.10.3.custom.min.js"></script>	
+        <script type="text/javascript" src="js/plugins/jquery.animate-enhanced.min.js"></script>
+        <script type="text/javascript" src="js/plugins/klokAlinear.plugin.js"></script>
+        <script type="text/javascript" src="js/plugins/klokMenuFalso.plugin.js"></script>
+        <script type="text/javascript" src="js/plugins/resize.plugin.js"></script>		 
+    </body>
+</html>

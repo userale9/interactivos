@@ -1,0 +1,497 @@
+/* ========================
+Klok -> [Alejandro Pacheco],
+Version = 1.0,
+Creado: 23/10/14,
+Ultima modificacion: 23/10/14
+======================== */
+
+/* [Reset: 1.1] -> ========================= KLOK ===================================== <- */
+* {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+    background:transparent;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; }
+
+body {
+    font-size:14px; }
+
+body, html{
+    height:100%; }
+
+article, aside, details, figcaption, 
+figure, footer, header, hgroup, main, 
+nav, section, summary {
+    display: block; }
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto; }
+
+input[type="search"] {
+    -webkit-appearance: textfield; }
+
+audio:not([controls]) {
+    display: none;
+    height: 0; }
+
+ol, ul {
+    list-style: none; }
+
+blockquote, q {
+    quotes: none; }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+
+button {
+    overflow: visible;
+    cursor: pointer; }
+
+button, select {
+    text-transform: none; }
+
+img, textarea, iframe {
+    max-width: 100%; }
+
+a{ 
+    color: white;
+    cursor:pointer; 
+    text-decoration:none; } 
+a:hover, a:active { }
+
+
+/* [Fonts] 
+=============================================================*/	
+@font-face {
+    font-family: "CalibriBoldItalic";
+    src: url('../fonts/CalibriBoldItalic.ttf') format('truetype'); }
+
+@font-face {
+    font-family: "CalibriBold";
+    src: url('../fonts/CalibriBold.ttf') format('truetype'); }
+
+@font-face {
+    font-family: "CalibriItalic";
+    src: url('../fonts/CalibriItalic.ttf') format('truetype'); }
+
+@font-face {
+    font-family: "Calibri";
+    src: url('../fonts/Calibri.ttf') format('truetype'); }
+
+@font-face {
+    font-family: "Calibril";
+    src: url('../fonts/Calibril.ttf') format('truetype'); }
+
+/* Typography
+=============================================================*/
+h1{
+    height: 74px !important; }
+h2{}
+h3{}
+h4{}
+h5{}
+h6{}
+
+/* Layout [css]
+=============================================================*/
+#contenido-interactivo {
+    font-family: "Calibri", Arial, sans-serif; }
+
+#activity {
+    z-index: 2000 !important;
+    background: url(../img/fondo.png) no-repeat center !important; }
+
+/* Global class
+=============================================================*/
+.display-none { 
+    display:none !important; }
+
+.display-block {
+    display: block !important; }
+
+.text-center { 
+    text-align:center; }
+
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%; }
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle; }
+
+.vertical-align-middle {
+    vertical-align: middle;
+    display: inline-block; }
+
+.vertical-align-top {
+    vertical-align: top;
+    display: inline-block; }
+
+.vertical-align-bottom {
+    vertical-align: bottom;
+    display: inline-block; }
+
+.transition, a, button{
+    transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s; }
+
+.cfix{ *zoom: 1; }
+.cfix:before, .cfix:after{
+    display:table;
+    content: ""; }
+.cfix:after{
+    clear: both; }
+
+/* Interactivo -> [pantalla1]
+=============================================================*/
+#pantalla1 {
+    width: 100%;
+    display:block;
+    position: relative;
+    height: 100%; }
+
+#contenido-pantalla1 {
+    width: 632px; 
+    height: 384px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: url(../img/bienvenida-video.png) no-repeat center; }
+
+#left-pantalla1 {
+    width: 50%;
+    float: left;
+    padding: 0px 24px;
+    height: 100%; }
+
+#left-pantalla1 article {
+    color: white;
+    font-size: 25px;
+    font-family: "CalibriBold";
+    line-height: 27px;
+    text-shadow: 1px 1px black; }
+
+#right-pantalla1 {
+    float: right;
+    width: 50%;
+    position: relative;
+    height: 100%; }
+
+#playVideo {
+    position: absolute;
+    margin: 0px auto 0px -89px;
+    padding: 15px 0px;
+    bottom: 68px;
+    border: 3px solid white;
+    left: 50%;
+    width: 178px;
+    text-align: center; }
+
+#playVideo:hover, #playVideo:active {
+    background: white; 
+    color: #444; }
+
+#goTopantalla3 {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: none;
+    opacity: 0.6; }
+
+#goTopantalla3:hover, #goTopantalla3:active {
+    opacity: 1; }
+
+/* Interactivo -> [pantalla2]
+=============================================================*/
+#pantalla2 {
+    width: 100%;
+    display: none;
+    position: relative;
+    height: 100%; }
+
+#contenido-pantalla2 {
+    width: 672px; 
+    height: 453px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; }
+
+#bottom-pantalla2 {
+    width: 100%;
+    height: 73px;
+    position: relative;
+    background: url(../img/info-video.png) no-repeat center; }
+
+#otk-video {
+    height: 384px;
+    width: 672px; 
+    margin: 0 auto;
+    display: block; }
+
+#bottom-pantalla2 article{
+    float: left;
+    width: 88%;
+    color: #FFF;
+    text-shadow: 1px 1px 0px #000;
+    line-height: 15px;
+    border-right: 1px solid rgba(255,255,255,0.3);
+    height: 49px;
+    padding-right: 15px;
+    margin-top: 13px;
+    padding-left: 15px; }
+
+#returnWindow {
+    width: 48px;
+    height: 41px;
+    float: right;
+    margin: 14px;
+    opacity: 0.6; }
+
+
+/* Interactivo -> [pantalla3]
+=============================================================*/
+#pantalla3 {
+    width: 100%;
+    display: none;
+    position: relative;
+    height: 100%; }
+
+#contenido-pantalla3 {
+    width: 696px; 
+    height: 473px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: url(../img/pantalla-ejercicio-1.png) no-repeat center; }
+
+#bottom-respuestas-pantalla3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+
+.respuesta {
+    position: relative;
+    width: 126px;
+    height: 102px;
+    display: none;
+    display: inline-block; }
+
+.respuesta .draggable {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    overflow: hidden;
+    background: url(../img/respuesta.png) no-repeat center;
+    cursor: crosshair; }
+
+.respuesta .draggable p {
+    color: #FFF;
+    text-shadow: 1px 1px 0px #444;
+    line-height: 12px;
+    padding: 5px 10px;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none; 
+    font-size: 10px; }
+
+#cajas-pantalla3 {
+    position: absolute;
+    width: 100%;
+    height: 365px;
+    top: 0; }
+
+
+#droppable1,#droppable2,#droppable3,#droppable4,#droppable5 {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-repeat: no-repeat;
+    background-position: center; }
+
+#droppable1 {
+    top: 105px;
+    left: 11px; }
+
+#droppable2 {
+    top: 73px;
+    left: 201px; }
+
+#droppable3 {
+    top: 230px;
+    left: 304px; }
+
+#droppable4 {
+    top: 228px;
+    left: 441px; }
+
+#droppable5 {
+    top: 173px;
+    left: 574px; }
+
+#article-pantalla3 {
+    color: white;
+    width: 100%;
+    height: 80px;
+    text-shadow: 1px 1px 0 black;
+    padding: 15px 20px 0; }
+
+/* Interactivo -> [pantalla4]
+=============================================================*/
+#pantalla4 {
+    width: 100%;
+    display: none;
+    position: relative;
+    height: 100%; }
+
+#contenido-pantalla4 {
+    width: 632px; 
+    height: 384px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: url(../img/pantalla-ejercicio-2.png) no-repeat center; }
+
+#left-pantalla4 {
+    width: 50%;
+    float: left;
+    display: none;
+    position: relative;
+    height: 100%; }
+
+#right-pantalla4 {
+    width: 50%;
+    position: relative;
+    float: right;
+    height: 100%; }
+
+#top-right-pantalla4 {
+    width: 100%;
+    height: 64px;
+    padding:0 15px;
+    margin-top: 32px; }
+
+#bottom-right-pantalla4 {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 288px; }
+
+#contenido-question-pantalla4 {
+    padding:0 20px; }
+
+#question {
+    color: #FFF;
+    line-height: 15px; }
+
+#correcto-pantalla4, #incorrecto-pantalla4 {
+    margin: 0 auto;
+    display:none;
+    position: relative;
+    z-index: 5; }
+
+#overlay-left-pantalla4 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    left: 0;
+    background: rgba(0,0,0,0.6); }
+
+#bottom-right-pantalla4 input[type=checkbox] {  
+    display: none;   }  
+
+#bottom-right-pantalla4  label {
+    font-size: 14px;
+    position: relative;
+    color: #FFF;
+    text-align:left;
+    display: block;
+    margin: 16px 0px; }
+
+#close-left-pantalla4 {
+    position: absolute;
+    z-index: 5;
+    left: 15px;
+    display: none;
+    top: 15px; }
+
+#bottom-right-pantalla4  label:before {  
+    content: "";  
+    float: left;
+    width: 29px;  
+    background: url(../img/checkbox.png) no-repeat center;
+    height: 30px;  
+    margin-right: 5px; } 
+
+#bottom-right-pantalla4 input[type=checkbox]:checked + label:before {  
+    content: ""; 
+    background: url(../img/checkmark.png) no-repeat center; } 
+
+/* Realimentacion
+=============================================================*/
+#realimentacion {
+    width: 100%;
+    display: none;
+    position: relative;
+    overflow: visible;
+    height: 100%; }
+
+#contenidoRea1, #contenidoRea2 {
+    margin: 0 auto;
+    width: 390px;
+    display: none;
+    height: 178px;
+    background: url(../img/retroalimentacion.png) no-repeat center; }
+
+#closeContenidoRea1, #closeContenidoRea2 {
+    position: absolute;
+    right: 190px;
+    top: 190px; }
+
+#contenidoRea1 article, #contenidoRea2 article {
+    color: white;
+    text-shadow: 1px 1px 0 black;
+    padding: 0px 29px; }
+
+#contenidoRea1 article p, #contenidoRea2 article p {
+    margin-top: 15px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

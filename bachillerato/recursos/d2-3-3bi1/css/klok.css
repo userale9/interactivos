@@ -1,0 +1,398 @@
+/* ========================
+Klok -> [Alejandro Pacheco],
+Version = 1.0,
+Creado: 23/10/14,
+Ultima modificacion: 27/10/14
+======================== */
+
+/* [Reset: 1.1] -> ========================= KLOK ===================================== <- */
+* {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+    background:transparent;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; }
+
+body {
+    font-size:14px; }
+
+body, html{
+    height:100%; }
+
+article, aside, details, figcaption, 
+figure, footer, header, hgroup, main, 
+nav, section, summary {
+    display: block; }
+
+audio, canvas, progress, video {
+    display: inline-block;
+    vertical-align: baseline; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto; }
+
+input[type="search"] {
+    -webkit-appearance: textfield; }
+
+audio:not([controls]) {
+    display: none;
+    height: 0; }
+
+ol, ul {
+    list-style: none; }
+
+blockquote, q {
+    quotes: none; }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0; }
+
+button {
+    overflow: visible;
+    cursor: pointer; }
+
+button, select {
+    text-transform: none; }
+
+img, textarea, iframe {
+    max-width: 100%; }
+
+a{ 
+    color: white;
+    cursor:pointer; 
+    text-decoration:none; } 
+a:hover, a:active { }
+
+
+/* [Fonts] 
+=============================================================*/	
+@font-face {
+    font-family: 'GothamBold';
+    src: url('../fonts/gotham-bold/Gotham-Bold.otf'); }
+
+/* Typography
+=============================================================*/
+h1{
+    height: 74px !important; }
+h2{}
+h3{}
+h4{}
+h5{}
+h6{}
+
+/* Layout [css]
+=============================================================*/
+#contenido-interactivo {
+    font-family: 'GothamBold', Arial, sans-serif; }
+
+#activity {
+    z-index: 2000 !important;
+    background: url(../img/fondo.png) no-repeat center !important; }
+
+/* Global class
+=============================================================*/
+.display-none { 
+    display:none !important; }
+
+.display-block {
+    display: block !important; }
+
+.text-center { 
+    text-align:center; }
+
+.table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%; }
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle; }
+
+.vertical-align-middle {
+    vertical-align: middle;
+    display: inline-block; }
+
+.vertical-align-top {
+    vertical-align: top;
+    display: inline-block; }
+
+.vertical-align-bottom {
+    vertical-align: bottom;
+    display: inline-block; }
+
+.transition, a, button{
+    transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+    -o-transition: all 0.4s ease 0s; }
+
+.cfix{ *zoom: 1; }
+.cfix:before, .cfix:after{
+    display:table;
+    content: ""; }
+.cfix:after{
+    clear: both; }
+
+/* Interactivo -> [pantalla1]
+=============================================================*/
+#pantalla1 {
+    width: 100%;
+    display:block;
+    position: relative;
+    background: url(../img/A/fondo.png) no-repeat center;
+    height: 100%; }
+
+#contenido-pantalla1 {
+    width: 678px; 
+    height: 472px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; }
+
+#left-pantalla1 {
+    width: 280px;
+    float: left;
+    height: 100%;
+    position: relative; }
+
+#right-pantalla1 {
+    float: right;
+    position: relative;
+    width: 392px; }
+
+#columna-1, #columna-2, #columna-3 {
+    width: 93px;
+    float: left; }
+
+#columna-2 {
+    margin-top: 50px; }
+#columna-3 {
+    margin-top: 95px; }
+
+.respuesta {
+    position: relative;
+    width: 93px;
+    height: 86px;
+    display: none;
+    display: inline-block; }
+
+.respuesta .draggable {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+
+#top-right-pantalla1 {
+    margin-top: 20px; }
+
+#celula {
+    position: relative;
+    width: 244px;
+    height: 250px;
+    margin: 0 auto; }
+
+#celula-active {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%; }
+
+#celula-active img{
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+#bottom-right-pantalla1 {
+    margin-top: 30px; }
+
+#pregunta {
+    margin: 0 auto;
+    width: 255px;
+    height: 57px;
+    color: whitesmoke;
+    background:url(../img/A/emergente.png) no-repeat center; }
+
+#droppable-contenedor {
+    width: 100%;
+    margin-top: 15px;
+    font-size: 0;
+    text-align: center;
+    position: relative; }
+
+#droppable-contenedor .box {
+    display: inline-block;
+    vertical-align: top;
+    width: 98px;
+    background: url(../img/A/espacio-arrastre.png) no-repeat center;
+    height: 90px; }
+
+#celula-active img {
+    display: none; }
+
+.text-drag {
+    color: white;
+    width: 93px;
+    height: 86px;
+    cursor: pointer;
+    background: url(../img/A/casillas-respuesta.png) no-repeat center; }
+
+.text-draggable {
+    font-size: 11px;
+    text-align: center;
+    color: white;
+    width: 80px;
+    margin: 0 auto;
+    line-height: 15px;
+    text-shadow: 0px 0px 3px #333; }
+
+#droppable-contenedor .active {
+    font-size: 10px;
+    text-align: center;
+    color: white;
+    background: url(../img/A/casillas-respuesta-activa.png) no-repeat center !important;
+    line-height: 12px;
+    text-shadow: 0px 0px 3px #333; }
+
+#droppable-contenedor .active p {
+    width: 80px;
+    margin: 0 auto; }
+
+#overlay-ejercicio1, #overlay2-ejercicio1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    height: 100%;
+    z-index: 999;
+    width: 100%;
+    background: rgba(0,0,0,0.7); }
+
+#title {
+    color: white;
+    font-size: 27px;
+    width: 65%;
+    margin: 0 auto;
+    text-align: center; }
+
+#text-bottom {
+    color: white;
+    font-size: 15px;
+    width: 100%;
+    margin: -80px auto 0;
+    text-align: center;}
+
+#button-next-question, #button-next-ejercicion {
+    text-align: center;
+    margin-top: 5px;
+    display: block; }
+
+
+/* Interactivo -> [pantalla2]
+=============================================================*/
+#pantalla2 {
+    width: 100%;
+    display:none;
+    position: relative;
+    background: white;
+    height: 100%; }
+
+#contenido-pantalla2 {
+    width: 100%; 
+    height: 100%;
+    position: relative; }
+
+#separador-pantalla2 {
+    background: url(../img/B/separador.png) no-repeat center;
+    width: 8px;
+    height: 100%;
+    left: 50%;
+    margin-left: -4px;
+    position: absolute;
+    top: 0;
+    z-index: 200; }
+
+#question-pantalla2 {
+    width: 561px;
+    z-index: 300;
+    position: absolute;
+    margin: 15px auto 0 -295.5px;
+    height: 59px;
+    background: url('../img/B/emergente.png') no-repeat center;
+    left: 50%; }
+
+#text-question-pantalla2 {
+    color: white;
+    text-align: center; }
+
+#left-pantalla2, #right-pantalla2 {
+    float: left;
+    width: 395px;
+    height: 100%; }
+
+#left-pantalla2 {
+    background: url(../img/B/fondo_izquierda.png) no-repeat center; }
+
+#right-pantalla2 {
+    background: url(../img/B/fondo_derecha.png) no-repeat center; }
+
+#contenido-left-pantalla2, #contenido-right-pantalla2 {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    background: url(../img/B/contenedor.png) no-repeat center; }
+
+#top-left-pantalla2, #top-right-pantalla2 {
+    height: 62%;
+    padding-top: 74px;
+    text-align: center; }
+
+#top-left-pantalla2 a, #top-right-pantalla2 a{
+    cursor: pointer;
+    display: inline-block; }
+
+#bottom-left-pantalla2, #bottom-right-pantalla2 {
+    padding: 0 60px; }
+
+#bottom-left-pantalla2 article, #bottom-right-pantalla2 article {
+    font-size: 13px;
+    color: black;
+    margin: 15px 0; }
+
+#overlay-pantalla2 {
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    z-index: 99999;
+    padding: 0 55px;
+    background: rgba(0,0,0,0.7); }
+
+#retroalimentacion-pantalla2 {
+    color: white;
+    font-size: 22px; 
+    text-align: center; }
+
+#button-retroalimentacion-pantalla2 {
+    display: block;
+    margin: 20px auto 0;
+    width: 102px; }
+
+
+
+
+
+

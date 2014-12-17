@@ -1,0 +1,26 @@
+.seccion{
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.pantallaCompleta{
+	width: 790px;
+	height: 560px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: block;
+}
+
+.seccion1{
+	background: url(../img/bg.png);
+}
+
+
+
+
+
+
+
+
+

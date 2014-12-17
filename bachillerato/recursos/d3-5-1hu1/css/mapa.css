@@ -1,0 +1,17 @@
+html, body{
+	margin: 0px;
+}
+
+#elmapiux{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 688px;
+	height: 468px;	
+}
+
+#elmapiux svg{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}

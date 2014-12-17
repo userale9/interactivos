@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta charset="utf-8" />
+        <title></title>
+        <link rel="stylesheet" href="../../common/css/interfaz.css" type="text/css" />
+        <link rel="stylesheet" href="css/activity.css"  type="text/css" />
+        <link rel="stylesheet" href="scrollbar/jquery.custom-scrollbar.css"  type="text/css" />
+        <link rel="stylesheet" href="css/klok.css"  type="text/css" />
+        <script src="../../common/js/jquery-1.8.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="config.js"></script>
+        <script type="text/javascript" src="../../common/js/jquery.touchSwipe.min.js"></script>
+        <script type="text/javascript" src="../../common/js/interfaz.js"></script>
+        <script type="text/javascript" src="../../common/js/multipanel.js"></script>
+        <script type="text/javascript" src="js/generales.js"></script>
+        <script type="text/javascript" src="scrollbar/jquery.custom-scrollbar.js"></script>
+        <script type="text/javascript" src="js/klok.js"></script>	
+        <style type="text/css">
+            #linkFuente {
+                color: white; }
+            #linkFuente:hover {
+                color: #ccc; }
+        </style>
+    </head>
+    <body>
+        <div id="activity">
+            <div id="fondomovil"></div>
+            <div id="panelReel">
+
+                <!-- Interactivo -->
+                <section id="contenido-interactivo">
+                    <section id="pantalla1"><!-- Patalla 1 -->
+                        <div id="contenido-pantalla1">
+                            <article><img src="img/img.1.png" class="img-left" alt="" title="" />La larva de la babosa de mar Elysia chlorotica necesita adherirse a una especie de alga específica para completar su ciclo de vida. Una vez adherida al alga, la babosa se alimenta de ella y adquiere sus cloroplastos. Sorprendentemente, tales cloroplastos continúan funcionando en la babosa adulta y le proporcionan energía hasta por 9 meses.</article>
+                            <article>
+                                Para que un cloroplasto sea completamente funcional, requiere de algunos productos generados por genes disponibles en el núcleo del alga. Es decir, que estos no deberían ser funcionales después de ser ingeridos. Sin embargo, en E. chlorotica, los genes del alga requeridos para el funcionamiento del cloroplasto se encuentran en el ADN nuclear de la babosa durante etapas clave de su ciclo de vida"
+                                <img src="img/img.2.png" class="img-right" alt="" title="" /></article> 
+                            <article>
+                                A los 9 meses de edad, las babosas adultas desovan y, de una manera sincrónica, la población entera muere. En este momento, curiosamente, las babosas presentan un contenido elevado de una versión exógena de un retrovirus endógeno, es decir, un fragmento del genoma de un retrovirus que forma parte integral del ADN de  E. chlorotica.</article>
+                            <article>
+                                <img src="img/3.png" class="img-left" alt="" title="" />El papel del virus en esta compleja relación no ha sido claramente definido, pero se ha propuesto que está implicado en la sincronía de la muerte de los adultos de la población e, incluso, en la transferencia horizontal de genes del núcleo del alga al molusco, lo que permite la utilización de los cloroplastos.</article>
+                            <article>
+                                Existen numerosos estudios que día a día descubren relaciones benéficas entre virus y  huéspedes como bacterias, hongos, plantas y animales; sin embargo, no podemos ignorar que han causado numerosas enfermedades y grandes pérdidas en la población humana, de plantas y de fauna. Es por ello que el estudio de su estructura y clasificación son relevantes para la comprensión de su funcionamiento y las implicaciones de su multiplicación en diversos seres vivos.</article>
+                            <p style="font-size:12px; color:#ccc;">Fuente:http://www.nature.com/nrmicro/journal/v9/n2/full/nrmicro2491.html</p>
+
+                            <div id="button-next" class="cfix">
+                                <a id="buttonNextp1" href="#"></a>
+                            </div>
+                        </div>
+                    </section><!-- Fin patalla 1 -->
+
+                    <section id="pantalla2"><!-- Pantalla 2 -->
+                        <div id="top-pantalla2">
+                            <div id="contenido-top-pantalla2">
+                                <p>Responde las siguientes preguntas, para ello consulta la tabla.</p>
+                                <a id="button-tablaShow" href="#">
+                                    <img src="img/overview_pages_4-48.png" alt="" title="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div id="bottom-pantalla2">
+                            <p id="question-pantalla2" data-question="1">
+                                ¿Cuántas familias incluyen virus que contienen ADN?
+                            </p>
+                            <form id="question-form" class="cfix">
+                                <textarea id="respuesta" placeholder="Respuesta:"></textarea>
+                                <button id="comprobar-button">Comprobar</button>
+                            </form>
+                        </div>
+                        <div id="callback-pregunta">
+                            <div class="table">
+                                <div class="table-cell">
+                                    <div id="contenido-callback-pregunta">
+                                        <div class="cfix">
+                                            <a id="closeImgCerrar-callback-pregunta" href="#">
+                                                <img src="img/cerrar.png" alt="" title="" />
+                                            </a>
+                                        </div>
+                                        <div id="success-pregunta">
+                                            <p>Tu respuesta es correcta.</p>
+                                        </div>
+                                        <div id="error-pregunta">
+                                            <p>Reflexiona tu respuesta.<br/>Analiza la tabla cuidadosamente.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section><!-- Fin pantalla 2 -->
+
+                    <section id="pantalla3" class="transition"><!-- Pantalla 3 -->
+                        <div id="top-pantalla3" class="cfix">
+                            <div id="left-top-pantalla3">
+                                <p><img src="img/iconoVirus.png" class="vertical-align-middle" alt="" title="" /><span class="vertical-align-middle"> TIPOS DE VIRUS</span></p>
+                            </div>
+                            <div id="right-top-pantalla3">
+                                <a id="close-pantalla3" href="#">
+                                    <img src="img/minimizar.png" alt="" title="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div id="contanido-pantalla3">
+                            <ul id="table-pantalla3">
+                                <li class="cfix table-pantalla3-title">
+                                    <p>Familia o tipo</p>
+                                    <p class="w20">Forma</p>
+                                    <p class="w15">Tamaño</p>
+                                    <p>Ácido Nucleico*</p>
+                                    <p class="w10">Envoltura</p>
+                                    <p class="lh1 w20">Ejemplo - Enfermedad</p>
+                                </li>
+                                <li class="baseCell cfix">
+                                    <p>Papovavirus</p>
+                                    <p class="w20">Icosaédrica<a data-this="0" class="virusImg v01" href="#"></a></p>
+                                    <p class="w15">45-55 nm</p>
+                                    <p>ADNbc</p>
+                                    <p class="w10">No</p>
+                                    <p class="lh1 w20">Virus del papiloma y verrugas</p>
+                                </li>
+                                <li class="cfix">
+                                    <p>Poxvirus</p>
+                                    <p class="w20">Compleja<a data-this="1" class="virusImg v02" href="#"></a></p>
+                                    <p class="w15">200x300 nm</p>
+                                    <p>ADNbc</p>
+                                    <p class="w10">No</p>
+                                    <p class="lh1 w20">Virus de la viruela humana y bovina</p>
+                                </li>
+                                <li class="baseCell cfix">
+                                    <p>Herpesvirus</p>
+                                    <p class="w20">Icosaédrica<a data-this="2" class="virusImg v03" href="#"></a></p>
+                                    <p class="w15">150-200 nm</p>
+                                    <p>ADNbc</p>
+                                    <p class="w10">Sí</p>
+                                    <p class="lh2 w20">Virus del herpes, varicela, sarcoma de Kaposi</p>
+                                </li>
+                                <li class="cfix">
+                                    <p>Adenovirus</p>
+                                    <p class="w20">Icosaédrica<a data-this="3" class="virusImg v04" href="#"></a></p>
+                                    <p class="w15">80-100 nm</p>
+                                    <p>ADNbc</p>
+                                    <p class="w10">No</p>
+                                    <p class="lh3 w20">Infecciones respiratorias, entéricas y oftálmicas</p>
+                                </li>
+                                <li class="baseCell cfix">
+                                    <p>Picornavirus</p>
+                                    <p class="w20">Icosaédrica<a data-this="4" class="virusImg v05" href="#"></a></p>
+                                    <p class="w15">28-30 nm</p>
+                                    <p>ARNmc</p>
+                                    <p class="w10">No</p>
+                                    <p class="lh3 w20">Poliomielitis, meningitis, hepatitis A, resfriado común</p>
+                                </li>
+                                <li class="cfix">
+                                    <p>Reovirus</p>
+                                    <p class="w20">Icosaédrica<a data-this="5" class="virusImg v06" href="#"></a></p>
+                                    <p class="w15">60-80 nm</p>
+                                    <p>ADNbc</p>
+                                    <p class="w10">No</p>
+                                    <p class="lh1 w20">Gastroenteritis y diarreas infantiles</p>
+                                </li>
+                                <li class="baseCell cfix">
+                                    <p>Togavirus</p>
+                                    <p class="w20">Icosaédrica<a data-this="6" class="virusImg v07" href="#"></a></p>
+                                    <p class="w15">70 nm</p>
+                                    <p>ARNmc</p>
+                                    <p class="w10">Sí</p>
+                                    <p class="lh1 w20">Rubeola, fiebre amarilla</p>
+                                </li>
+                                <li class="cfix">
+                                    <p>Retrovirus</p>
+                                    <p class="w20">Helicoidal<a data-this="7" class="virusImg v08" href="#"></a></p>
+                                    <p class="w15">80-130 nm</p>
+                                    <p>ARNmc</p>
+                                    <p class="w10">Sí</p>
+                                    <p class="w20">VIH-1 y VIH-2</p>
+                                </li>
+                                <li class="baseCell cfix">
+                                    <p>Ortomixovirus</p>
+                                    <p class="w20">Helicoidal<a data-this="8" class="virusImg v09" href="#"></a></p>
+                                    <p class="w15">80-120 nm</p>
+                                    <p>ARNmc</p>
+                                    <p class="w10">Sí</p>
+                                    <p class="w20">Influenza</p>
+                                </li>
+                                <li class="cfix">
+                                    <p>Paramixovirus</p>
+                                    <p class="w20">Helicoidal<a data-this="9" class="virusImg v10" href="#"></a></p>
+                                    <p class="w15">150-250 nm</p>
+                                    <p>ARNmc</p>
+                                    <p class="w10">Sí</p>
+                                    <p class="lh2 w20">Sarampión, paperas, bronquitis</p>
+                                </li>
+                                <li class="baseCell cfix">
+                                    <p>Rhabdovirus</p>
+                                    <p class="w20">Helicoidal<a data-this="10" class="virusImg v11" href="#"></a></p>
+                                    <p class="w15">180x75 nm</p>
+                                    <p>ARNmc</p>
+                                    <p class="w10">Sí</p>
+                                    <p class="w20">Rabia</p>
+                                </li>
+                            </ul>
+                            <div id="button-table-pantalla3">
+                                <p>*mc = monocatenario (cadena sencilla), bc = bicatenario (doble cadena).</p>
+                            </div>
+                        </div>
+                        <div id="detalleVirus" class="transition">
+                            <div class="table">
+                                <div class="table-cell">
+                                    <div id="contenidoVirusDetalle">
+                                        <a id="closeImgCerrar" href="#">
+                                            <img src="img/cerrar.png" alt="" title="" />
+                                        </a>
+                                        <img id="searchImageDetalle" src="" alt="" title="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section><!-- Fin pantalla 3 -->
+
+                    <section id="pantalla4" class="transition"><!-- Pantalla 4 -->
+                        <a id="closeImgCerrarp4" href="#">
+                            <img src="img/cerrar.png" alt="" title="" />
+                        </a>
+                        <div class="table">
+                            <div class="table-cell">
+                                <div id="contenido-pantalla4">
+                                    <article>¡Excelente! ¿Se te ocurre algún virus de importancia económica o de salud pública que no aparezca en la tabla? Anímate e investiga su familia y principales características.</article>
+                                </div>
+                            </div>
+                        </div>
+                    </section><!-- Fin pantalla 4 -->
+
+                </section><!-- Fin interactivo -->
+
+            </div> <!-- fin panelReel -->      
+        </div><!-- fin activity -->
+        <script type="text/javascript" src="js/plugins/jquery-ui-1.10.3.custom.min.js"></script>	
+        <script type="text/javascript" src="js/plugins/jquery.animate-enhanced.min.js"></script>
+        <script type="text/javascript" src="js/plugins/klokAlinear.plugin.js"></script>
+        <script type="text/javascript" src="js/plugins/klokMenuFalso.plugin.js"></script>
+        <script type="text/javascript" src="js/plugins/resize.plugin.js"></script>		 
+    </body>
+</html>

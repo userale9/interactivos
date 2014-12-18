@@ -1,10 +1,16 @@
 //aqui van todas las acciones y funciones de javascript
 
 $("#grafico1").click(function(){
-	$("#tablagrafico1").fadeIn().unbind("click").click(function(){
-		$(this).fadeOut();
-	});
+    $("#tablagrafico1").fadeIn().unbind("click").click(function(){
+        $(this).fadeOut();
+    });
 })
+
+$('#close-zoomLupa').click(function(){
+    $(this).hide();
+    $('#detalle-01,#detalle-02,#detalle-03,#detalle-04').hide();
+    $('#zoom-lupa').fadeOut();
+});
 
 //facor de comentarlas
 
@@ -78,7 +84,8 @@ var DISPERSION = {
 
         $("#finale .cerrar").click(function() {
             if($("#finale").hasClass("bien")) {
-                location.reload();
+                $('#reiniciar').css('opacity',1);
+                activityEnd=true;
             } else {
                 self.iniciarPreguntas(true);
                 $(this).parent().fadeOut();
@@ -88,39 +95,82 @@ var DISPERSION = {
 
     iniciarPantallas: function() {
 
-        var self = this;
+        if(totalDePantallas){ // Si existe la variable significa que se tiene que navegar con las flechas del footer
 
-        self.$movimiento = $(".movimiento");
-
-        self.$movimiento.children("a").click(function(e) {
-            e.preventDefault();
-            var that = $(this);
-            if(that.hasClass("adelante")) {
-                if(self.posicion == self.total) return;
-
-                that.siblings().fadeIn();
-                self.posicion++;
-                var $pantalla = $(self.$pantallas[self.posicion-1]);
-
-                $pantalla.siblings(".pantalla").fadeOut();
-                $pantalla.fadeIn();
-
-                if(self.posicion == self.total) that.fadeOut();
-
-            } else if(that.hasClass("atras")) {
-
-                if(self.posicion == 1) return;
-
-                that.siblings().fadeIn();
-                self.posicion--;
-                var $pantalla = $(self.$pantallas[self.posicion-1]);
-
-                $pantalla.siblings(".pantalla").fadeOut();
-                $pantalla.fadeIn();
-
-                if(self.posicion == 1) that.fadeOut();
+            var resizeTimer;
+            function hideHeader() { // Función para ocultar el header
+                footerImg.attr('src', footerOff)
+                $('footer').stop(true, true).animate({
+                    bottom: '-=' + footerHeight
+                },500, 'swing');
             }
-        });
+
+            function buttonActivity(valor){ // Función para cambiar el texto en el footer y cambiar el estado de los botones de navegación
+                var initializationOfValor = parseInt(valor);
+                switch(initializationOfValor){
+                    case 1:
+                        $('#instrucciones').text(paneles[0].instrucciones);
+                        $('#siguiente').css('opacity',1); 
+                        $('#anterior').css('opacity',0.4); 
+                        break;
+                    case 2:
+                        $('#instrucciones').text(paneles[1].instrucciones);
+                        $('#siguiente').css('opacity',1); 
+                        $('#anterior').css('opacity',1); 
+                        break;
+                    case 3:
+                        $('#instrucciones').text(paneles[2].instrucciones);
+                        $('#siguiente').css('opacity',0.4); 
+                        $('#anterior').css('opacity',1); 
+                        break;
+                };
+
+                if (resizeTimer){ // Cuando se le hace click ha cada botón, receto el tiempo para ocultar el footer 
+                    clearTimeout(resizeTimer); } 
+                resizeTimer = setTimeout(function() { 
+                    resizeTimer = null; hideHeader(); }, 7000); 
+
+            }
+
+            $('#siguiente').click(function(){ // Botones de navegacion
+                initialization++;
+                initialization=parseInt(initialization);
+                if(initialization>=3){
+                    initialization=3 }
+                buttonActivity(initialization);
+                if(initialization==2){
+                    $('#pantallaUno').hide();
+                    $('#pantallaDos').fadeIn(); }
+                else if(initialization==3){
+                    $('#pantallaDos').hide();
+                    $('#pantallaTres').fadeIn(); }
+                footerImg.attr('src', footerOn)
+                $('footer').stop(true, true).animate({
+                    bottom: '=' + footerHeight
+                },500, 'swing');
+            });
+
+            $('#anterior').click(function(){ // Botones de navegacion
+                initialization--;
+                initialization=parseInt(initialization);
+                if(initialization<=1){
+                    initialization=1; }
+                console.log(initialization);
+                buttonActivity(initialization);
+                if(initialization==1){
+                    $('#pantallaDos').hide();
+                    $('#pantallaUno').fadeIn(); }
+                else if(initialization==2){
+                    $('#pantallaTres').hide();
+                    $('#pantallaDos').fadeIn(); }
+                footerImg.attr('src', footerOn)
+                $('footer').stop(true, true).animate({
+                    bottom: '=' + footerHeight
+                },500, 'swing');
+            });
+
+        }
+
     },
 
     iniciarPreguntas: function(reload) {
@@ -133,24 +183,47 @@ var DISPERSION = {
         self.$preguntas.find(".opcion").removeClass("clicked activa");
 
         if(reload != true) {
-            self.$preguntas.find(".opcion").click(function() {
-                var $op = $(this);
-                if($op.hasClass("clicked")) return;
-                $op.addClass("clicked activa");
-                $op.siblings().addClass("clicked");
-                if($op.attr("data-correcta") == 1) {
-                    self.preguntasCorrectas++;
+            self.$preguntas.find(".opcion").click(function(e) {
+                if($(e.target).attr('id') == 'lupa-01'||
+                   $(e.target).attr('id') == 'lupa-02'||
+                   $(e.target).attr('id') == 'lupa-03'||
+                   $(e.target).attr('id') == 'lupa-04'){
+                    var thisE = $(e.target).attr('id');
+                    $('#zoom-lupa, #close-zoomLupa').show();
+                    switch(thisE){
+                        case 'lupa-01':
+                            $('#detalle-01').fadeIn();
+                            break;
+                        case 'lupa-02':
+                            $('#detalle-02').fadeIn();
+                            break;
+                        case 'lupa-03':
+                            $('#detalle-03').fadeIn();
+                            break;
+                        case 'lupa-04':
+                            $('#detalle-04').fadeIn();
+                            break;
+                    }
                 }
-                if(self.posicionEjercicio == 10) {
-                    self.grandFinale();
-                    return;
+                else {
+                    var $op = $(this);
+                    if($op.hasClass("clicked")) return;
+                    $op.addClass("clicked activa");
+                    $op.siblings().addClass("clicked");
+                    if($op.attr("data-correcta") == 1) {
+                        self.preguntasCorrectas++;
+                    }
+                    if(self.posicionEjercicio == 10) {
+                        self.grandFinale();
+                        return;
+                    }
+                    setTimeout(function() {
+                        $(".pregunta[data-pregunta='"+self.posicionEjercicio+"']").fadeOut(300,function(){
+                            self.posicionEjercicio++;
+                            $(".pregunta[data-pregunta='"+self.posicionEjercicio+"']").fadeIn();
+                        });
+                    },500);
                 }
-                setTimeout(function() {
-                    $(".pregunta[data-pregunta='"+self.posicionEjercicio+"']").fadeOut(300,function(){
-                        self.posicionEjercicio++;
-                        $(".pregunta[data-pregunta='"+self.posicionEjercicio+"']").fadeIn();
-                    });
-                },500);
             });
 
             self.$preguntas.each(function() {
@@ -224,7 +297,7 @@ var DISPERSION = {
                     randEl = $(allElems[random]).clone(true)[0];
                 allElems.splice(random, 1);
                 return randEl;
-           });
+            });
 
         this.each(function(i){
             $(this).replaceWith($(shuffled[i]));

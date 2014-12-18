@@ -44,12 +44,12 @@
                         <div class="botonera">
                             <span id="btnIntermoleculares" class="btn">Fuerzas intermoleculares</span>
                             <span id="btnVanderwaals" class="btn">Fuerza de Van Der Waals</span>
-                            <span id="btnIondipolo" data-id="iondipolo" class="btn">Fuerzas Ion-dipolo</span>
+                            <span id="btnIondipolo" data-id="iondipolo" class="btn">Fuerzas ion-dipolo</span>
 
                             <div class="contenedor-botones-izquierda" style="display:none;">
 
                                 <span id="btnDispersion" data-id="dispersion" class="btn">Fuerzas de dispersión de London</span>
-                                <span id="btnDipolodipolo" data-id="dipolodipolo" class="btn">Fuerzas Dipolo-dipolo</span>
+                                <span id="btnDipolodipolo" data-id="dipolodipolo" class="btn">Fuerzas dipolo-dipolo</span>
                                 <span id="btnPuentes" data-id="puentes" class="btn">Puentes de hidrógeno</span>
 
                             </div> <!-- .contenedor-botones-izquierda -->
@@ -114,13 +114,13 @@
                                     <article><div class="table"><div class="table-cell">Las siguientes moléculas tienen la misma masa molecular, ¿cuál de ellas tendrá el menor punto de fusión y ebullición? </div></div></article></div>
                                 <div class="opciones">
                                     <div class="opcion" data-correcta="1"><img src="img/imagen1.png" />
-                                        <img id="lupa-01" src="img/boton-detalle-inactivo.png" /></div>
+                                        <a id="lupa-01" href="#"></a></div>
                                     <div class="opcion" data-correcta="0"><img src="img/imagen2.png" />
-                                        <img id="lupa-02" src="img/boton-detalle-inactivo.png" /></div>
+                                        <a id="lupa-02" href="#"></a></div>
                                     <div class="opcion" data-correcta="0"><img src="img/imagen3.png" />
-                                        <img id="lupa-03" src="img/boton-detalle-inactivo.png" /></div>
+                                        <a id="lupa-03" href="#"></a></div>
                                     <div class="opcion" data-correcta="0"><img src="img/imagen4.png" />
-                                        <img id="lupa-04" src="img/boton-detalle-inactivo.png" /></div>
+                                        <a id="lupa-04" href="#"></a></div>
                                 </div>
                                 <div id="zoom-lupa">
                                     <div id="table-zoom" class="table">
@@ -169,7 +169,7 @@
                                     <article><div class="table"><div class="table-cell">¿Cuál de los siguientes compuestos puede formar puentes de hidrogeno? </div></div></article></div>
                                 <div class="opciones">
                                     <div class="opcion" data-correcta="1"><div class="table"><div class="table-cell">Metano (CH<sub>3</sub>OH)</div></div></div>
-                                    <div class="opcion" data-correcta="0"><div class="table"><div class="table-cell">Acetona (CH<sub>3</sub>COCH<sub>3</div></div></sub>)</div>
+                                    <div class="opcion" data-correcta="0"><div class="table"><div class="table-cell">Acetona (CH<sub>3</sub>COCH<sub>3</sub>)</div></div></div>
                                     <div class="opcion" data-correcta="0"><div class="table"><div class="table-cell">Eter (CH<sub>3</sub>OCH<sub>3</sub>)</div></div></div>
                                     <div class="opcion" data-correcta="0"><div class="table"><div class="table-cell">Propano (CH<sub>3</sub>CH<sub>2</sub>CH<sub>3</sub>)</div></div></div>
                                 </div>
@@ -198,7 +198,7 @@
                                     <div class="opcion chica" data-correcta="0"><div class="table"><div class="table-cell">Fuerzas de dispersión de London</div></div></div>
                                 </div>
 
-                                <img src="img/grafica.png" id="grafico1">
+                                <a id="grafico1" href="#"></a>
 
                                 <table id="tablagrafico1">
                                     <tr>
@@ -218,7 +218,6 @@
                         <div id="finale" class="mal" style="display:none;">
                             <span class="cerrar"></span>
                             <div class="mal">
-                                <img src="img/botones/tache.png">
                                 <p>Has tenido <i class="respuestas-correctas"></i> aciertos de 10. Reinicia la actividad e intenta otra vez.</p>
                             </div>
 
@@ -231,22 +230,23 @@
                         </div>
 
                     </div> <!-- #pantallaTres -->
-
+                    
                     <div class="movimiento">
                         <a href="#" class="atras" style="display:none;"></a>
                         <a href="#" class="adelante"></a>
                     </div>
 
                     <div class="ventana" data-id="iondipolo">
-                        <span class="cerrar"></span>
+                        <span class="cerrar cerrar2"></span>
                         <h3 class="titulo">Fuerzas ion-dipolo</h3>
                         <div class="texto">
                             <p>Este tipo de fuerzas intermoleculares se presenta en disoluciones de un compuesto iónico en un disolvente polar. En esta mezcla, las moléculas del disolvente polar se orientan de tal modo que la parte parcial positiva interactúa con el ion con carga negativa; mientras que la parte parcial negativa, interactúa con el ion con carga positiva. Esta fuerza intermolecular es más fuerte que todas las demás. </p>
+                            <img src="img/img_txt4.png" style="left:50%;margin-left: -145px;position: relative;">
                         </div>
                     </div>
 
                     <div class="ventana" data-id="dispersion">
-                        <span class="cerrar"></span>
+                        <span class="cerrar cerrar2"></span>
                         <h3 class="titulo">Fuerzas de Dispersión de London</h3>
                         <div class="texto">
                             <p>Este tipo de interacciones es la que permite que las sustancias no polares, o disoluciones de ellas, tengas estados condensados. Se debe a la deformación momentánea de la nube electrónica de un átomo o molécula  por la presencia de la nube de otra muy cercana. A esta deformación se le llama polarización. Entre mayor sea la polarización, mayor será la fuerza de atracción entre ellas. </p>
@@ -258,22 +258,24 @@
                                 <li>Una sustancia con mayor masa atómica o molecular, tiene más electrones, por lo que no son atraídos fuertemente por el núcleo, esto ocasiona que el átomo o molécula sea más polarizable.</li>
                                 <li>La forma de la molécula también influye en su polarización. Una molécula alargada y lineal tiene mayor superficie que una compacta y ramificada, por ende, la primera es más polarizable.</li>
                             </ul>
+                            <img src="img/img_txt1.png" style="left:50%;margin-left: -145px;position: relative;">
                         </div>
                     </div>
 
                     <div class="ventana" data-id="dipolodipolo">
-                        <span class="cerrar"></span>
+                        <span class="cerrar cerrar2"></span>
                         <h3 class="titulo">Fuerzas dipolo-dipolo</h3>
                         <div class="texto">
                             <p>En las moléculas polares la distribución de la nube electrónica es desigual. En ellas hay una región en la que hay deficiencia de nube electrónica, por lo que se dice que tiene carga parcial positiva; mientras que en otra región hay exceso de nube electrónica, por lo que tiene una carga parcial negativa. Estas moléculas, ya sea en sustancias o en disoluciones, se orientan de modo que la carga parcial positiva de una molécula interactúa con la carga parcial negativa de otras. Como en este tipo de fuerzas intermoleculares se dan entre dipolos permanentes, son más fuertes que las fuerzas de dispersión de London. </p>
+                            <img src="img/img_txt2.png" style="left:50%;margin-left: -145px;position: relative;">
                         </div>
                     </div>
 
                     <div class="ventana" data-id="puentes">
-                        <span class="cerrar"></span>
+                        <span class="cerrar cerrar2"></span>
                         <h3 class="titulo">Puentes de hidrógeno</h3>
                         <div class="texto">
-                            <p>Este tipo de fuerza intermolecular se da entre un átomo de hidrógeno de una molécula con un átomo con pares libres de otra molécula. Por lo general, los átomos que pueden formar puentes con el hidrógeno son oxígeno, nitrógeno y flúor. Este tipo de fuerza intermolecular es más fuerte que la dipolo-dipolo.</p>
+                            <p>Este tipo de fuerza intermolecular se da entre un átomo de hidrógeno de una molécula con un átomo con pares libres de otra molécula. Por lo general, los átomos que pueden formar puentes con el hidrógeno son oxígeno, nitrógeno y flúor. Este tipo de fuerza intermolecular es más fuerte que la dipolo-dipolo.</p><img src="img/img_txt3.png" style="left:50%;margin-left: -145px;position: relative;">
                         </div>
                     </div>
 
